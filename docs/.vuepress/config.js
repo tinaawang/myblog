@@ -36,43 +36,51 @@ module.exports = {
   markdown: {
     lineNumbers: true // 代码块显示行号
   },
-  plugins: {
-    "@vssue/vuepress-plugin-vssue": {
-      // 设置 `platform` 而不是 `api`
-      platform: "github-v4",
-      // 其他的 Vssue 配置
-      owner: "tinaawang",
-      repo: "myblog",
-      clientId: "84f3ebcac0dbe084791b",
-      clientSecret: "8cdee82454dbdf20744f91df7e3f14d898ce9ea5",
-      autoCreateIssue: true
-    },
+  plugins: [
+    ["@vuepress/back-to-top", true],
+    [
+      "@vssue/vuepress-plugin-vssue",
+      {
+        // 设置 `platform` 而不是 `api`
+        platform: "github-v4",
+        // 其他的 Vssue 配置
+        owner: "tinaawang",
+        repo: "myblog",
+        clientId: "84f3ebcac0dbe084791b",
+        clientSecret: "8cdee82454dbdf20744f91df7e3f14d898ce9ea5",
+        autoCreateIssue: true
+      }
+    ],
 
-    "@vuepress/pwa": {
-      serviceWorker: true,
-      updatePopup: true
-    },
-    "vuepress-plugin-auto-sidebar": {},
-    "@vuepress/back-to-top": {},
-    "@vuepress/medium-zoom": {}
-  },
+    [
+      "@vuepress/pwa",
+      {
+        serviceWorker: true,
+        updatePopup: true
+      }
+    ],
+    ["vuepress-plugin-auto-sidebar", true],
+    ["@vuepress/medium-zoom", true],
+    ["@vuepress/nprogress", true]
+  ],
 
   themeConfig: {
     lastUpdated: "上次更新时间", // string | boolean
     nav: [
       { text: "css", link: "/css/" }, // 内部链接 以docs为根目录
       { text: "javascript", link: "/js/" }, // 内部链接 以docs为根目录
+      { text: "http", link: "/http/" }, // 内部链接 以docs为根目录
       {
         text: "其他",
         items: [
-          { text: "简书", link: "https://github.com/OBKoro1" },
+          { text: "简书", link: "https://www.jianshu.com/u/51b10c899397" },
           {
             text: "掘金",
-            link: "https://github.com/OBKoro1/Brush_algorithm"
+            link: "https://juejin.im/user/5aba05faf265da238c3ab3c1"
           }
         ]
       }, // 外部链接
-      { text: "GitHub", link: "http://obkoro1.com/" } // 外部链接
+      { text: "GitHub", link: "https://github.com/tinaawang" } // 外部链接
     ]
   }
 };
