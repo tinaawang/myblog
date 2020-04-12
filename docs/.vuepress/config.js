@@ -53,7 +53,8 @@ module.exports = {
       updatePopup: true
     },
     "vuepress-plugin-auto-sidebar": {},
-    "@vuepress/back-to-top": {}
+    "@vuepress/back-to-top": {},
+    "@vuepress/medium-zoom": {}
   },
 
   themeConfig: {
