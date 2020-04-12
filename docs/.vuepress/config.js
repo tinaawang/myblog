@@ -1,5 +1,5 @@
 module.exports = {
-  title: "CHARLLOTE",
+  title: "My Blog",
   description: "我的个人博客",
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
@@ -59,7 +59,16 @@ module.exports = {
         updatePopup: true
       }
     ],
-    ["vuepress-plugin-auto-sidebar", true],
+    [
+      "vuepress-plugin-auto-sidebar",
+      {
+        titleMode: "titlecase",
+        titleMap: {
+          home: "🎉 Hello Vuepress 🎉",
+          guide: "🎉 指南 🎉"
+        }
+      }
+    ],
     ["@vuepress/medium-zoom", true],
     ["@vuepress/nprogress", true]
   ],
@@ -67,9 +76,11 @@ module.exports = {
   themeConfig: {
     lastUpdated: "上次更新时间", // string | boolean
     nav: [
-      { text: "css", link: "/css/" }, // 内部链接 以docs为根目录
-      { text: "javascript", link: "/js/" }, // 内部链接 以docs为根目录
-      { text: "http", link: "/http/" }, // 内部链接 以docs为根目录
+      { text: "Home", link: "/" }, // 内部链接 以docs为根目录
+      { text: "Guide", link: "/guide/" }, // 内部链接 以docs为根目录
+      { text: "Css", link: "/css/" }, // 内部链接 以docs为根目录
+      { text: "Javascript", link: "/js/" }, // 内部链接 以docs为根目录
+      { text: "Http", link: "/http/" }, // 内部链接 以docs为根目录
       {
         text: "其他",
         items: [
