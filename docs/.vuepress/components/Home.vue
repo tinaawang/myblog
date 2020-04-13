@@ -1,6 +1,6 @@
 <template>
   <div class="home-wrapper">
-    <img src="../images/home.png" alt class="home-img">
+    <img src="../images/home.jpeg" alt class="home-img">
     <div class="button"></div>
   </div>
 </template>
