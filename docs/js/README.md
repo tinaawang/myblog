@@ -96,3 +96,18 @@ Object.defineProperties(obj2,Object.getOwnPropertyDescriptors(obj1))
 console.info( obj2 )
 /*  {a:22,b:{c:233}}*/
 ```
+
+#### 递归拷贝函数
+
+```
+拷贝函数
+
+function deepCopy(obj){
+    if(typeof obj !== 'object')return;
+    var newObj = obj instanceof Array ? [] : {};
+    for(var i in obj){
+         newObj[key] = typeof obj[key] === 'object' ? deepCopy(obj[key]) : obj[key];
+    }
+    return newObj
+}
+```

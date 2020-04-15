@@ -1,5 +1,5 @@
 module.exports = {
-  title: "My Blog",
+  title: "夏洛特的博客",
   description: "我的个人博客",
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
@@ -65,7 +65,8 @@ module.exports = {
         titleMode: "titlecase",
         titleMap: {
           home: "🎉 Hello Vuepress 🎉",
-          guide: "🎉 指南 🎉"
+          guide: "🎉 指南 🎉",
+          mark: "随笔"
         }
       }
     ],
@@ -80,7 +81,9 @@ module.exports = {
       { text: "Guide", link: "/guide/" }, // 内部链接 以docs为根目录
       { text: "Css", link: "/css/" }, // 内部链接 以docs为根目录
       { text: "Javascript", link: "/js/" }, // 内部链接 以docs为根目录
+      { text: "TypeScript", link: "/ts/" }, // 内部链接 以docs为根目录
       { text: "Http", link: "/http/" }, // 内部链接 以docs为根目录
+      { text: "随笔", link: "/mark/" }, // 内部链接 以docs为根目录
       {
         text: "其他",
         items: [
