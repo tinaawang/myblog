@@ -2,7 +2,9 @@
 title: "TypeScript与Vue初体验"
 ---
 
-在家隔离，把之前的项目框架改改，加入 typescript 的使用。
+# TypeScript 与 Vue 初体验
+
+把之前的项目框架改改，加入 typescript 的使用。
 
 功能： 登录，权限菜单， 请求封装， layout 配置
 
