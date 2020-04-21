@@ -194,8 +194,6 @@ var getData:ConfigFn=function<T>(value:T):T{
     getData<string>(1243);  //error!
 ```
 
-## 函数
-
 ## 类型推论
 
 类型推论也和类型检查有关，当我们没有特意指明类型时，TypeScript 会自动进行类型推论来确定类型

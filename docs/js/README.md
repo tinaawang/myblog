@@ -106,7 +106,7 @@ function deepCopy(obj){
     if(typeof obj !== 'object')return;
     var newObj = obj instanceof Array ? [] : {};
     for(var i in obj){
-         newObj[key] = typeof obj[key] === 'object' ? deepCopy(obj[key]) : obj[key];
+         newObj[i] = typeof obj[i] === 'object' ? deepCopy(obj[i]) : obj[i];
     }
     return newObj
 }
