@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue Object的变化侦测 | 夏洛特的博客</title>
+    <meta name="description" content="我的个人博客">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/myblog/logo.png">
+  <link rel="manifest" href="/myblog/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/myblog/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/myblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/myblog/assets/css/0.styles.59679289.css" as="style"><link rel="preload" href="/myblog/assets/js/app.2dc899dd.js" as="script"><link rel="preload" href="/myblog/assets/js/6.436ea9ec.js" as="script"><link rel="preload" href="/myblog/assets/js/2.c5641ed6.js" as="script"><link rel="preload" href="/myblog/assets/js/26.a522a18d.js" as="script"><link rel="prefetch" href="/myblog/assets/js/10.69719587.js"><link rel="prefetch" href="/myblog/assets/js/11.97615f58.js"><link rel="prefetch" href="/myblog/assets/js/12.a35b8877.js"><link rel="prefetch" href="/myblog/assets/js/13.37e2b90f.js"><link rel="prefetch" href="/myblog/assets/js/14.c7b2e4e0.js"><link rel="prefetch" href="/myblog/assets/js/15.ee7ccbbe.js"><link rel="prefetch" href="/myblog/assets/js/16.e8faca68.js"><link rel="prefetch" href="/myblog/assets/js/17.8cf87dd3.js"><link rel="prefetch" href="/myblog/assets/js/18.78c39740.js"><link rel="prefetch" href="/myblog/assets/js/19.7f111b17.js"><link rel="prefetch" href="/myblog/assets/js/20.54b83217.js"><link rel="prefetch" href="/myblog/assets/js/21.8f0fce3d.js"><link rel="prefetch" href="/myblog/assets/js/22.3d199b82.js"><link rel="prefetch" href="/myblog/assets/js/23.103bdb77.js"><link rel="prefetch" href="/myblog/assets/js/24.ae83ebc8.js"><link rel="prefetch" href="/myblog/assets/js/25.586f29e4.js"><link rel="prefetch" href="/myblog/assets/js/27.a0740a6c.js"><link rel="prefetch" href="/myblog/assets/js/28.73cbfe72.js"><link rel="prefetch" href="/myblog/assets/js/29.39fe4f2b.js"><link rel="prefetch" href="/myblog/assets/js/3.bf8b1e09.js"><link rel="prefetch" href="/myblog/assets/js/30.acd11f91.js"><link rel="prefetch" href="/myblog/assets/js/4.7bb159d6.js"><link rel="prefetch" href="/myblog/assets/js/5.5a6ca5b8.js"><link rel="prefetch" href="/myblog/assets/js/7.66e4e1d4.js"><link rel="prefetch" href="/myblog/assets/js/8.823aa727.js"><link rel="prefetch" href="/myblog/assets/js/9.e65b30a3.js">
+    <link rel="stylesheet" href="/myblog/assets/css/0.styles.59679289.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/myblog/" class="home-link router-link-active"><!----> <span class="site-name">夏洛特的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/myblog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/myblog/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/myblog/css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/myblog/js/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/myblog/ts/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><a href="/myblog/http/" class="nav-link">
+  Http
+</a></div><div class="nav-item"><a href="/myblog/mark/" class="nav-link router-link-exact-active router-link-active">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/51b10c899397" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://juejin.im/user/5aba05faf265da238c3ab3c1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/tinaawang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/myblog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/myblog/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/myblog/css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/myblog/js/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/myblog/ts/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><a href="/myblog/http/" class="nav-link">
+  Http
+</a></div><div class="nav-item"><a href="/myblog/mark/" class="nav-link router-link-exact-active router-link-active">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/51b10c899397" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://juejin.im/user/5aba05faf265da238c3ab3c1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/tinaawang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>随笔</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/myblog/mark/" class="active sidebar-link">Vue Object的变化侦测</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/myblog/mark/#数据观察" class="sidebar-link">数据观察</a></li><li class="sidebar-sub-header"><a href="/myblog/mark/#依赖-收集" class="sidebar-link">依赖 收集</a></li><li class="sidebar-sub-header"><a href="/myblog/mark/#observer-和-watcher" class="sidebar-link">Observer 和 Watcher</a></li><li class="sidebar-sub-header"><a href="/myblog/mark/#侦测没办法监听到对象上属性的新增和删除" class="sidebar-link">侦测没办法监听到对象上属性的新增和删除</a></li></ul></li><li><a href="/myblog/mark/node.html" class="sidebar-link">自己写一个Node脚本</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-object-的变化侦测"><a href="#vue-object-的变化侦测" class="header-anchor">#</a> Vue Object 的变化侦测</h1> <h2 id="数据观察"><a href="#数据观察" class="header-anchor">#</a> 数据观察</h2> <p>Vue 中的对象变化侦测是通过<code>Object.definePorperty</code>实现的，但是<code>Object.definePorperty</code>的方式有缺陷，比如不能直接代理整个对象，每次都要循环遍历对象的所有属性；尤大大说之后会使用 ES6 中的<code>Proxy</code> 重写这个部分。这篇博客介绍的是 Object.definePorperty 实现的对象侦测。</p> <p>我们来看下面这段代码，定义一个 defineReactive 函数，使用 Object.definePorperty 遍历对象对象属性的时候，设置 get 和 set；当对象属性被读取的时候触发 get，对象属性被设置的时候触发 set。这样就完成了对 data 的数据劫持，因为 Vue 的思想是响应式的，我们还需要收集这些变化。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function defineReactive(data,key,val){
+    Object.definePorperty(data,key,{
+        enumerable: true,
+        configurable: true,
+        get:function(){
+            return val;
+        }
+        set :function (newVal){
+            if(val === newVal){return}
+            val = newVal;
+        }
+    })
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="依赖-收集"><a href="#依赖-收集" class="header-anchor">#</a> 依赖 收集</h2> <p>创建一个 Dep 类，在 get 中收集依赖，在 set 中新增依赖</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Dep{
+    constructor(){
+        this.arr = []
+    }
+    addSub(sub){
+        this.arr.push(sub)
+    }
+     removeSub(sub){
+        remove(this.arr,sub)
+    }
+    depend(){
+        if(window.target){
+            this.addSub(window.target)
+        }
+    }
+    notify(){
+        const arrs  = this.arr.slice();
+        for(let i = 0; i&lt; arrs.lenth ;i ++){
+            arrs[i].update();
+        }
+    }
+
+}
+
+function defineReactive(data,key,val){
+
+    let dep = new Dep()
+    Object.definePorperty(data,key,{
+        enumerable: true,
+        configurable: true,
+        get:function(){
+            dep.depend(); // 收集依赖
+            return val;
+        }
+        set :function (newVal){
+            if(val === newVal){return}
+            val = newVal;
+            dep.notify(); // 新增依赖
+        }
+    })
+}
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h2 id="observer-和-watcher"><a href="#observer-和-watcher" class="header-anchor">#</a> Observer 和 Watcher</h2> <p>我们发现 defineReactive 函数只能将某一个属性转换为 get/set 的形式，所以我们需要一个观察者 Observer 用来帮助递归的侦测所有的 key</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Observer{
+    constructor(value){
+        this.value = value
+    }
+    if(!Array.isArry(value)){
+        this.walk(value)
+    }
+    walk(obj){
+        const keys = Object.keys(obj)
+        for(let i = 0; i &lt; keys.length ;i++){
+            defineReactive(data,keys[i],obj[keys[i])
+        }
+    }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>当这些依赖收集完成之后，我们要通知谁呢？怎么样能让视图知道有变化更新？我们需要实现一个订阅者 Watcher,
+每次触发 get 的时候都将 dep 指向自己，这样就可以收集到依赖；
+每次 set 的时候都循环调用 Watcher 的 update 方法。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Watcher{
+    constructor(vm,exp,cb){
+        this.vm = vm;
+        this.cb = cb;
+        this.exp = exp;
+        this.value = this.get();
+    }
+    get(){
+        Dep.target = this;    // 将当前订阅者指向自己
+        var value = this.vm[exp];    // 触发getter，添加自己到属性订阅器中
+        Dep.target = null;    // 添加完毕，重置
+        return value;
+    }
+    update(){
+        const oldVal = this.value;
+        this.value = this.get();
+        this.cb.call(this.vm,this.value,oldVal)
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>当 Vue 实例挂载好之后，模板都会绑定一个 Watcher，谁的属性发生变化了就会通知响应的 Watcher,Watcher 再去通知编译器 Compile 进行视图更新</p> <h2 id="侦测没办法监听到对象上属性的新增和删除"><a href="#侦测没办法监听到对象上属性的新增和删除" class="header-anchor">#</a> 侦测没办法监听到对象上属性的新增和删除</h2> <p>Vue 通过<code>Object.definePorperty</code>将对象的 key 转化为 getter setter 的形式来进行侦测，但是无法追踪到属性的新增和删除，所以 Vue 中提供了 vm.$set 和 vm.$get 来实现。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间:</span> <span class="time">4/15/2020, 1:04:04 PM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/myblog/mark/node.html">
+        自己写一个Node脚本
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"></div></div>
+    <script src="/myblog/assets/js/app.2dc899dd.js" defer></script><script src="/myblog/assets/js/6.436ea9ec.js" defer></script><script src="/myblog/assets/js/2.c5641ed6.js" defer></script><script src="/myblog/assets/js/26.a522a18d.js" defer></script>
+  </body>
+</html>

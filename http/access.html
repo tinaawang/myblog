@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>http常用请求头 | 夏洛特的博客</title>
+    <meta name="description" content="我的个人博客">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/myblog/logo.png">
+  <link rel="manifest" href="/myblog/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/myblog/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/myblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/myblog/assets/css/0.styles.59679289.css" as="style"><link rel="preload" href="/myblog/assets/js/app.2dc899dd.js" as="script"><link rel="preload" href="/myblog/assets/js/6.436ea9ec.js" as="script"><link rel="preload" href="/myblog/assets/js/2.c5641ed6.js" as="script"><link rel="preload" href="/myblog/assets/js/17.8cf87dd3.js" as="script"><link rel="prefetch" href="/myblog/assets/js/10.69719587.js"><link rel="prefetch" href="/myblog/assets/js/11.97615f58.js"><link rel="prefetch" href="/myblog/assets/js/12.a35b8877.js"><link rel="prefetch" href="/myblog/assets/js/13.37e2b90f.js"><link rel="prefetch" href="/myblog/assets/js/14.c7b2e4e0.js"><link rel="prefetch" href="/myblog/assets/js/15.ee7ccbbe.js"><link rel="prefetch" href="/myblog/assets/js/16.e8faca68.js"><link rel="prefetch" href="/myblog/assets/js/18.78c39740.js"><link rel="prefetch" href="/myblog/assets/js/19.7f111b17.js"><link rel="prefetch" href="/myblog/assets/js/20.54b83217.js"><link rel="prefetch" href="/myblog/assets/js/21.8f0fce3d.js"><link rel="prefetch" href="/myblog/assets/js/22.3d199b82.js"><link rel="prefetch" href="/myblog/assets/js/23.103bdb77.js"><link rel="prefetch" href="/myblog/assets/js/24.ae83ebc8.js"><link rel="prefetch" href="/myblog/assets/js/25.586f29e4.js"><link rel="prefetch" href="/myblog/assets/js/26.a522a18d.js"><link rel="prefetch" href="/myblog/assets/js/27.a0740a6c.js"><link rel="prefetch" href="/myblog/assets/js/28.73cbfe72.js"><link rel="prefetch" href="/myblog/assets/js/29.39fe4f2b.js"><link rel="prefetch" href="/myblog/assets/js/3.bf8b1e09.js"><link rel="prefetch" href="/myblog/assets/js/30.acd11f91.js"><link rel="prefetch" href="/myblog/assets/js/4.7bb159d6.js"><link rel="prefetch" href="/myblog/assets/js/5.5a6ca5b8.js"><link rel="prefetch" href="/myblog/assets/js/7.66e4e1d4.js"><link rel="prefetch" href="/myblog/assets/js/8.823aa727.js"><link rel="prefetch" href="/myblog/assets/js/9.e65b30a3.js">
+    <link rel="stylesheet" href="/myblog/assets/css/0.styles.59679289.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/myblog/" class="home-link router-link-active"><!----> <span class="site-name">夏洛特的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/myblog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/myblog/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/myblog/css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/myblog/js/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/myblog/ts/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><a href="/myblog/http/" class="nav-link router-link-active">
+  Http
+</a></div><div class="nav-item"><a href="/myblog/mark/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/51b10c899397" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://juejin.im/user/5aba05faf265da238c3ab3c1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/tinaawang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/myblog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/myblog/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/myblog/css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/myblog/js/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/myblog/ts/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><a href="/myblog/http/" class="nav-link router-link-active">
+  Http
+</a></div><div class="nav-item"><a href="/myblog/mark/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/51b10c899397" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://juejin.im/user/5aba05faf265da238c3ab3c1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/tinaawang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Http</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/myblog/http/" class="sidebar-link">Cookie</a></li><li><a href="/myblog/http/access.html" class="active sidebar-link">http常用请求头</a></li><li><a href="/myblog/http/connection.html" class="sidebar-link">http 长连接  短连接</a></li><li><a href="/myblog/http/cros.html" class="sidebar-link">跨域</a></li><li><a href="/myblog/http/statusCode.html" class="sidebar-link">http状态码</a></li><li><a href="/myblog/http/tcp.html" class="sidebar-link">TCP协议</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="http-常用请求头"><a href="#http-常用请求头" class="header-anchor">#</a> http 常用请求头</h1> <table><thead><tr><th style="text-align:center;">协议头</th> <th>说明</th></tr></thead> <tbody><tr><td style="text-align:center;">Accept</td> <td>可接受的响应内容类型（Content-Types）</td></tr> <tr><td style="text-align:center;">Accept-Charset</td> <td>可接受的字符集</td></tr> <tr><td style="text-align:center;">Accept-Encoding</td> <td>可接受的响应内容的编码方式</td></tr> <tr><td style="text-align:center;">Accept-Language</td> <td>可接受的响应内容语言列表</td></tr> <tr><td style="text-align:center;">Accept-Datetime</td> <td>可接受的按照时间来表示的响应内容版本</td></tr> <tr><td style="text-align:center;">Authorization</td> <td>用于表示 HTTP 协议中需要认证资源的认证信息</td></tr> <tr><td style="text-align:center;">Cache-Control</td> <td>用来指定当前的请求/回复中的，是否使用缓存机制</td></tr> <tr><td style="text-align:center;">Connection</td> <td>客户端（浏览器）想要优先使用的连接类型</td></tr> <tr><td style="text-align:center;">Cookie</td> <td>由之前服务器通过 Set-Cookie 设置的一个 HTTP 协议 Cookie</td></tr> <tr><td style="text-align:center;">Content-Length</td> <td>以 8 进制表示的请求体的长度</td></tr> <tr><td style="text-align:center;">Content-MD5</td> <td>请求体的内容的二进制 MD5 散列值（数字签名），以 Base64 编码的结果</td></tr> <tr><td style="text-align:center;">Content-Type</td> <td>请求体的 MIME 类型 （用于 POST 和 PUT 请求中）</td></tr> <tr><td style="text-align:center;">Date</td> <td>发送该消息的日期和时间（以 RFC 7231 中定义的&quot;HTTP 日期&quot;格式来发送）</td></tr> <tr><td style="text-align:center;">Expect</td> <td>表示客户端要求服务器做出特定的行为</td></tr> <tr><td style="text-align:center;">From</td> <td>发起此请求的用户的邮件地址</td></tr> <tr><td style="text-align:center;">Host</td> <td>表示服务器的域名以及服务器所监听的端口号。如果所请求的端口是对应的服务的标准端口（80），则端口号可以省略</td></tr> <tr><td style="text-align:center;">If-Match</td> <td>仅当客户端提供的实体与服务器上对应的实体相匹配时，才进行对应的操作。主要用于像 PUT 这样的方法中，仅当从用户上次更新某个资源后，该资源未被修改的情况下，才更新该资源</td></tr> <tr><td style="text-align:center;">If-Modified-Since</td> <td>允许在对应的资源未被修改的情况下返回 304 未修改</td></tr> <tr><td style="text-align:center;">If-None-Match</td> <td>允许在对应的内容未被修改的情况下返回 304 未修改（ 304 Not Modified ）</td></tr> <tr><td style="text-align:center;">If-Range</td> <td>如果该实体未被修改过，则向返回所缺少的那一个或多个部分。否则，返回整个新的实体</td></tr> <tr><td style="text-align:center;">If-Unmodified-Since</td> <td>仅当该实体自某个特定时间以来未被修改的情况下，才发送回应</td></tr> <tr><td style="text-align:center;">Max-Forwards</td> <td>限制该消息可被代理及网关转发的次数</td></tr> <tr><td style="text-align:center;">Origin</td> <td>发起一个针对跨域资源共享的请求（该请求要求服务器在响应中加入一个 Access-Control-Allow-Origin 的消息头，表示访问控制所允许的来源）</td></tr> <tr><td style="text-align:center;">Pragma</td> <td>与具体的实现相关，这些字段可能在请求/回应链中的任何时候产生</td></tr> <tr><td style="text-align:center;">Proxy-Authorization</td> <td>用于向代理进行认证的认证信息</td></tr> <tr><td style="text-align:center;">Range</td> <td>表示请求某个实体的一部分，字节偏移以 0 开始</td></tr> <tr><td style="text-align:center;">Referer</td> <td>表示浏览器所访问的前一个页面，可以认为是之前访问页面的链接将浏览器带到了当前页面。Referer 其实是 Referrer 这个单词，但 RFC 制作标准时给拼错了，后来也就将错就错使用 Referer 了</td></tr> <tr><td style="text-align:center;">User-Agent</td> <td>浏览器的身份标识字符串</td></tr> <tr><td style="text-align:center;">Upgrade</td> <td>要求服务器升级到一个高版本协议</td></tr></tbody></table></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间:</span> <span class="time">4/15/2020, 1:04:04 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/myblog/http/" class="prev router-link-active">
+        Cookie
+      </a></span> <span class="next"><a href="/myblog/http/connection.html">
+        http 长连接  短连接
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"></div></div>
+    <script src="/myblog/assets/js/app.2dc899dd.js" defer></script><script src="/myblog/assets/js/6.436ea9ec.js" defer></script><script src="/myblog/assets/js/2.c5641ed6.js" defer></script><script src="/myblog/assets/js/17.8cf87dd3.js" defer></script>
+  </body>
+</html>

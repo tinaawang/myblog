@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>自己写一个Node脚本 | 夏洛特的博客</title>
+    <meta name="description" content="我的个人博客">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/myblog/logo.png">
+  <link rel="manifest" href="/myblog/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/myblog/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/myblog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/myblog/assets/css/0.styles.59679289.css" as="style"><link rel="preload" href="/myblog/assets/js/app.2dc899dd.js" as="script"><link rel="preload" href="/myblog/assets/js/6.436ea9ec.js" as="script"><link rel="preload" href="/myblog/assets/js/2.c5641ed6.js" as="script"><link rel="preload" href="/myblog/assets/js/27.a0740a6c.js" as="script"><link rel="prefetch" href="/myblog/assets/js/10.69719587.js"><link rel="prefetch" href="/myblog/assets/js/11.97615f58.js"><link rel="prefetch" href="/myblog/assets/js/12.a35b8877.js"><link rel="prefetch" href="/myblog/assets/js/13.37e2b90f.js"><link rel="prefetch" href="/myblog/assets/js/14.c7b2e4e0.js"><link rel="prefetch" href="/myblog/assets/js/15.ee7ccbbe.js"><link rel="prefetch" href="/myblog/assets/js/16.e8faca68.js"><link rel="prefetch" href="/myblog/assets/js/17.8cf87dd3.js"><link rel="prefetch" href="/myblog/assets/js/18.78c39740.js"><link rel="prefetch" href="/myblog/assets/js/19.7f111b17.js"><link rel="prefetch" href="/myblog/assets/js/20.54b83217.js"><link rel="prefetch" href="/myblog/assets/js/21.8f0fce3d.js"><link rel="prefetch" href="/myblog/assets/js/22.3d199b82.js"><link rel="prefetch" href="/myblog/assets/js/23.103bdb77.js"><link rel="prefetch" href="/myblog/assets/js/24.ae83ebc8.js"><link rel="prefetch" href="/myblog/assets/js/25.586f29e4.js"><link rel="prefetch" href="/myblog/assets/js/26.a522a18d.js"><link rel="prefetch" href="/myblog/assets/js/28.73cbfe72.js"><link rel="prefetch" href="/myblog/assets/js/29.39fe4f2b.js"><link rel="prefetch" href="/myblog/assets/js/3.bf8b1e09.js"><link rel="prefetch" href="/myblog/assets/js/30.acd11f91.js"><link rel="prefetch" href="/myblog/assets/js/4.7bb159d6.js"><link rel="prefetch" href="/myblog/assets/js/5.5a6ca5b8.js"><link rel="prefetch" href="/myblog/assets/js/7.66e4e1d4.js"><link rel="prefetch" href="/myblog/assets/js/8.823aa727.js"><link rel="prefetch" href="/myblog/assets/js/9.e65b30a3.js">
+    <link rel="stylesheet" href="/myblog/assets/css/0.styles.59679289.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/myblog/" class="home-link router-link-active"><!----> <span class="site-name">夏洛特的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/myblog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/myblog/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/myblog/css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/myblog/js/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/myblog/ts/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><a href="/myblog/http/" class="nav-link">
+  Http
+</a></div><div class="nav-item"><a href="/myblog/mark/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/51b10c899397" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://juejin.im/user/5aba05faf265da238c3ab3c1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/tinaawang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/myblog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/myblog/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/myblog/css/" class="nav-link">
+  Css
+</a></div><div class="nav-item"><a href="/myblog/js/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/myblog/ts/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><a href="/myblog/http/" class="nav-link">
+  Http
+</a></div><div class="nav-item"><a href="/myblog/mark/" class="nav-link router-link-active">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/51b10c899397" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://juejin.im/user/5aba05faf265da238c3ab3c1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/tinaawang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>随笔</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/myblog/mark/" class="sidebar-link">Vue Object的变化侦测</a></li><li><a href="/myblog/mark/node.html" class="active sidebar-link">自己写一个Node脚本</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="自己写一个-node-脚本"><a href="#自己写一个-node-脚本" class="header-anchor">#</a> 自己写一个 Node 脚本</h1> <p>只要本地电脑装了 node 环境的 你就可以撸一个简易 node 服务。</p> <p>先创建文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>cd desktop
+mkdir node_demo
+cd node_demo
+
+touch serve.js
+
+// 打开serve.js编辑 ，我用的vscode
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>附上脚本代码</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//引入http模块
+var http = require(&quot;http&quot;);
+//引入文件读写模块fs
+var fs = require(&quot;fs&quot;);
+// 引入url
+var url = require(&quot;url&quot;);
+
+//设置端口
+var port = process.argv[2];
+
+if (!port) {
+  console.log(&quot;指定一个端口号哦\n 像node server.js 8083 这样&quot;);
+  process.exit(1);
+}
+// 创建服务
+var server = http.createServer(function(request, response) {
+  var parsedUrl = url.parse(request.url, true);
+  var pathWithQuery = request.url;
+  var queryString = &quot;&quot;;
+  if (pathWithQuery.indexOf(&quot;?&quot;) &gt;= 0) {
+    queryString = pathWithQuery.substring(pathWithQuery.indexOf(&quot;?&quot;));
+  }
+  var path = parsedUrl.pathname;
+  var query = parsedUrl.query;
+  var method = request.method;
+
+  if (path === &quot;/&quot;) {
+    response.statusCode = 200;
+    response.setHeader(&quot;Content-Type&quot;, &quot;text/html;charset=utf-8&quot;);
+    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);
+    res.header(
+      &quot;Access-Control-Allow-Headers&quot;,
+      &quot;Origin, X-Requested-With, Content-Type, Accept&quot;
+    );
+    res.header(&quot;Access-Control-Allow-Methods&quot;, &quot;PUT,POST,GET,DELETE,OPTIONS&quot;);
+
+    response.write(`hello`);
+    response.end();
+  } else if (path === &quot;/x&quot;) {
+    response.statusCode = 200;
+    response.setHeader(&quot;Content-Type&quot;, &quot;text/css;charset=utf-8&quot;);
+    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);
+    res.header(
+      &quot;Access-Control-Allow-Headers&quot;,
+      &quot;Origin, X-Requested-With, Content-Type, Accept&quot;
+    );
+    res.header(&quot;Access-Control-Allow-Methods&quot;, &quot;PUT,POST,GET,DELETE,OPTIONS&quot;);
+    response.write(`nothing`);
+    response.end();
+  } else {
+    response.statusCode = 404;
+    response.setHeader(&quot;Content-Type&quot;, &quot;text/html;charset=utf-8&quot;);
+    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);
+    res.header(
+      &quot;Access-Control-Allow-Headers&quot;,
+      &quot;Origin, X-Requested-With, Content-Type, Accept&quot;
+    );
+    res.header(&quot;Access-Control-Allow-Methods&quot;, &quot;PUT,POST,GET,DELETE,OPTIONS&quot;);
+    response.write(`你输入的路径不存在对应的内容`);
+    response.end();
+  }
+});
+
+server.listen(port);
+console.log(&quot;监听 &quot; + port + &quot; 成功啦！\n请打开 http://localhost:&quot; + port);
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br></div></div><p>运行<code>node server.js + 你指定的端口号'</code></p> <p>打开控制台输出的路径，你就可以看到服务响应的信息啦</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间:</span> <span class="time">4/21/2020, 10:18:31 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/myblog/mark/" class="prev router-link-active">
+        Vue Object的变化侦测
+      </a></span> <!----></p></div>  <!----></main></div><div class="global-ui"></div></div>
+    <script src="/myblog/assets/js/app.2dc899dd.js" defer></script><script src="/myblog/assets/js/6.436ea9ec.js" defer></script><script src="/myblog/assets/js/2.c5641ed6.js" defer></script><script src="/myblog/assets/js/27.a0740a6c.js" defer></script>
+  </body>
+</html>
